@@ -20,15 +20,14 @@ if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
   # There is an issue in using these flags in earlier versions of MSVC:
   # https://developercommunity.visualstudio.com/content/problem/220812/experimentalexternal-generates-a-lot-of-c4193-warn.html
   if(MSVC_VERSION GREATER 1920)
-      add_compile_options(/experimental:external)
-      add_compile_options(/external:W1)
+      list(APPEND CMAKE_CXX_FLAGS /experimental:external /external:W1)
   endif()
 
   # When building in parallel, MSVC sometimes fails with the following error:
   # > fatal error C1090: PDB API call failed, error code '23'
   # To avoid this problem, we force PDB write to be synchronous with /FS.
   # https://developercommunity.visualstudio.com/content/problem/48897/c1090-pdb-api-call-failed-error-code-23.html
-  add_compile_options(/FS)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /FS")
 else()
   include(scalable_ccd_filter_flags)
   set(SCALABLE_CCD_GLOBAL_FLAGS
