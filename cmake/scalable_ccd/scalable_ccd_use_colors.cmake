@@ -20,7 +20,7 @@ if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
   # There is an issue in using these flags in earlier versions of MSVC:
   # https://developercommunity.visualstudio.com/content/problem/220812/experimentalexternal-generates-a-lot-of-c4193-warn.html
   if(MSVC_VERSION GREATER 1920)
-      list(APPEND CMAKE_CXX_FLAGS /experimental:external /external:W1)
+      set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /experimental:external /external:W1")
   endif()
 
   # When building in parallel, MSVC sometimes fails with the following error:
