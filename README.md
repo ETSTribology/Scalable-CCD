@@ -1,6 +1,6 @@
 # Scalable CCD
 
-[![Build](https://github.com/continuous-collision-detection/scalable-ccd/actions/workflows/continuous.yml/badge.svg)](https://github.com/continuous-collision-detection/scalable-ccd/actions/workflows/continuous.yml)
+[![Build](https://github.com/ETSTribologyscalable-ccd/actions/workflows/continuous.yml/badge.svg)](https://github.com/ETSTribology/scalable-ccd/actions/workflows/continuous.yml)
 [![License](https://img.shields.io/github/license/continuous-collision-detection/scalable-ccd.svg?color=blue)](https://github.com/continuous-collision-detection/scalable-ccd/blob/main/LICENSE)
 
 Sweep and Tiniest Queue & Tight-Inclusion GPU CCD
